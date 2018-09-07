@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.addition";
+option java_outer_classname = "AdditionProto";
+option objc_class_prefix = "AW";
+
+package addition;
+
+service Adder {
+  rpc Add (AddRequest) returns (AddReply) {}
+}
+
+message AddRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+
+message AddReply {
+  string c = 1;
+}
